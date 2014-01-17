@@ -30,14 +30,53 @@ var birthDate = prompt(birthDateRequest);
 
 //make sure value at 2 === / and 5 === / 
 
-
-
-if (birthDate.charAt(2) === '/' && birthDate.charAt(5) === '/'){
-alert('That\'s a valid birth date.');
-
-}else{
-
-alert('This is not valid birth date.');
-
+var numbers = {
+	'0':0,
+	'1':0,
+	'2':2,
+	'3':3,
+	'4':4,
+	'5':5,
+	'6':6,
+	'7':7,
+	'8':8,
+	'9':9
 }
+
+var isDigit = function (x) {
+
+	for (i=0; i <8; i++) {
+		if ((i===2 || i===5) && (x[i] === '/')) {
+			continue; 
+		}else if (x[i] in numbers){
+			continue;
+		
+		} else {
+			return false;
+		}
+
+	} 
+	return true; 
+		
+}
+console.log(isDigit(birthDate));
+// if (isDigit(birthDate)) {
+// 	alert("This is not a valid birthdate.");
+// }
+// // if ((typeof parseInt(birthDate.substring(0,1)) ==='number') && (typeof parseInt(birthDate.substring(3,4) parseInt(birthDate.substring (6,7))) === ""){
+// alert('That\'s a valid birth date.');
+
+// }else{
+
+// alert('This is not valid birth date.');
+
+// }
+
+
+
+
+
+
+
+
 
